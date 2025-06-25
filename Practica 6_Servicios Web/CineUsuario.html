@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Compra de Boletos - Cine</title>
+  <style>
+    /* General Styles */
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+    }
+
+    h1 {
+      color: #2c3e50;
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    h3 {
+      font-size: 1.2rem;
+      color: #27ae60;
+      margin-top: 20px;
+    }
+
+    /* Form and Input Styles */
+    label {
+      font-size: 1rem;
+      color: #34495e;
+      margin-bottom: 10px;
+      display: inline-block;
+    }
+
+    input[type="text"], input[type="number"] {
+      width: 250px;
+      padding: 10px;
+      margin: 10px 0;
+      border: 2px solid #bdc3c7;
+      border-radius: 5px;
+      font-size: 1rem;
+      background-color: #ecf0f1;
+    }
+
+    input[type="text"]:focus, input[type="number"]:focus {
+      outline: none;
+      border-color: #3498db;
+      background-color: #ffffff;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #3498db;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #2980b9;
+    }
+
+    /* Result Styling */
+    #resultado {
+      font-size: 1.1rem;
+      color: #e74c3c;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 600px) {
+      input[type="text"], input[type="number"] {
+        width: 100%;
+      }
+
+      button {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Compra de Boletos</h1>
+  
+  <label for="cliente">Cliente:</label>
+  <input type="text" id="cliente" placeholder="Ingresa tu nombre" /><br />
+
+  <label for="cantidad">Cantidad de Boletos:</label>
+  <input type="number" id="cantidad" placeholder="Cantidad de boletos" /><br />
+  
+  <button onclick="comprarBoletos()">Comprar</button>
+  
+  <h3 id="resultado"></h3>
+  
+  <script>
+    function comprarBoletos() {
+      const cliente = document.getElementById("cliente").value;
+      const cantidad = document.getElementById("cantidad").value;
+      
+      if (!cliente || !cantidad) {
+        document.getElementById('resultado').innerText = 'Por favor, ingresa todos los datos.';
+        return;
+      }
+
+      fetch(`http://localhost:8080/cine/comprar?cliente=${cliente}&cantidad=${cantidad}`, {
+        method: 'POST',
+      })
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('resultado').innerText = data;
+        
+        // Limpiar los campos de entrada después de la compra
+        document.getElementById("cliente").value = '';
+        document.getElementById("cantidad").value = '';
+      })
+      .catch(error => {
+        document.getElementById('resultado').innerText = 'Error: ' + error;
+      });
+    }
+  </script>
+</body>
+</html>

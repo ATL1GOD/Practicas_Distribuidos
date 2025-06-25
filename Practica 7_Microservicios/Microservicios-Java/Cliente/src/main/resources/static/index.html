@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>¡Cine a tu hogar!</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🎬 ¡Bienvenido a CineBoleto!</h1>
+      <p>Compra tus boletos fácilmente y sin hacer filas</p>
+    </header>
+
+    <div class="content">
+      <h2>📽️ Cartelera:</h2>
+      <div id="peliculas">
+        <!-- Las películas serán cargadas aquí mediante JavaScript -->
+      </div>
+
+      <h3>📝 Datos de la Compra:</h3>
+      <input type="text" id="nombreCliente" placeholder="Ingresa tu nombre" class="input-field" />
+
+      <button onclick="comprarBoletos()" class="btn">🎟 Comprar Boletos</button>
+
+      <p id="mensaje"></p>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 Atl1God. Todos los derechos reservados.
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
