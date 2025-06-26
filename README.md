@@ -165,7 +165,7 @@ Este repositorio contiene las soluciones para las prácticas de la asignatura de
 
 **Pasos para la Ejecución:**
 
-1.  Abra una terminal y navegue al directorio `Practica 6_Servicios Web/`.
+1.  Abra una terminal y navegue al directorio `Practica 6_Servicios Web/ServicioWebCine/`.
 2.  **Ejecute la aplicación Spring Boot:**
     ```bash
     mvn spring-boot:run
@@ -176,35 +176,36 @@ Este repositorio contiene las soluciones para las prácticas de la asignatura de
 
 ---
 
-### **Práctica 7 - Arquitectura de Microservicios**
+### **Práctica 7_Microservicios**
 
-**Descripción:** Esta práctica descompone la aplicación de la panadería en una arquitectura de microservicios. Incluye servicios para inventario, compras, un servidor de descubrimiento (Eureka) y un API Gateway. Todo el sistema se orquesta y despliega utilizando Docker y Docker Compose.
+**Descripción:** Esta práctica descompone la aplicación del Cine en una arquitectura de microservicios. Incluye servicios para boletos, compras, un servidor de descubrimiento (Eureka) y un API Gateway.
 
-**Ubicación de los archivos:** `Práctica 7 - Microservice_Panaderia/`
+**Ubicación de los archivos:** `Practica 7_Microservicios/`
 
 **Requisitos:**
 
-- Tener Docker instalado y en ejecución.
+- Tener **Apache Maven** instalado.
+- Tener **Postman** instalado para probar el servicio web RESTful.
 
 **Pasos para la Ejecución:**
 
-1.  Abre una terminal y navega al directorio `Práctica 7 - Microservice_Panaderia/`.
-2.  **Levanta todo el sistema con Docker Compose:**
-    ```bash
-    docker compose up --build
-    ```
-3.  **Accede a los servicios:**
-    - **Frontend del Cliente:** `http://localhost:8084`
-    - **Dashboard de Eureka:** `http://localhost:8761`
-    - **API Gateway:** `http://localhost:8083`
+1.  Abra una terminal y navegue al directorio `Practica 7_Microservicios/Microservicios-Java/`.
+2.  **Acceder a los servicios de manera dependiente**
+    Abra una terminal por cada microservicio y navegue a su respectivo directorio.
+    `../servicioboletos/`, `../serviciocompras/`, `../eurekaserver/`, `../apigateway/`, `../Cliente/`
+
+`3. **Ejecute cada uno de los servicios:**
+`bash
+    mvn spring-boot:run
+    `
 
 ---
 
-### **Práctica 8 - Progressive Web App (PWA)**
+### **Práctica 8_Progressive Web App (PWA)**
 
-**Descripción:** Esta práctica convierte el frontend de la panadería en una Progressive Web App (PWA). La aplicación es instalable, funciona sin conexión gracias a un Service Worker y recibe actualizaciones de stock en tiempo real mediante Server-Sent Events (SSE).
+**Descripción:** Esta práctica convierte el frontend del Cine en una Progressive Web App (PWA). La aplicación es instalable, funciona sin conexión gracias a un Service Worker y recibe actualizaciones de stock en tiempo real mediante Server-Sent Events (SSE).
 
-**Ubicación de los archivos:** `Práctica 8 - PWA_panaderia/`
+**Ubicación de los archivos:** `Practica 8_Progressive Web App (PWA)/`
 
 **Requisitos:**
 
@@ -213,12 +214,14 @@ Este repositorio contiene las soluciones para las prácticas de la asignatura de
 
 **Pasos para la Ejecución:**
 
-1.  Abre una terminal y navega al directorio `Práctica 8 - PWA_panaderia/`.
-2.  **Ejecuta la aplicación Spring Boot:**
+1.  Abra una terminal y navegue al directorio `Practica 8_Progressive Web App (PWA)/Cine-PWA/`.
+
+2.  **Ejecute el servidor con Node.js:**
     ```bash
-    mvn spring-boot:run
+    npm install
+    npm start
     ```
-3.  **Accede a la PWA:** Abre tu navegador y ve a `http://localhost:8081`. Podrás instalar la aplicación desde la barra de direcciones.
+3.  **Acceda a la PWA:** Abra su navegador y vaya a `http://localhost:3000`. Podra instalar la aplicación desde la barra de direcciones.
 
 ### **Implementaciones en la Nube**
 
@@ -229,7 +232,9 @@ A continuación se presentan los enlaces a las aplicaciones desplegadas en difer
   - **Azure:** [https://panaderia-app-bhafafb5hja4axew.canadacentral-01.azurewebsites.net/](https://panaderia-app-bhafafb5hja4axew.canadacentral-01.azurewebsites.net/)
 
 - **Microservicio PWA (Cine - Proyecto en equipo):**
-  - Este proyecto, al ser también una Aplicación Web Progresiva (PWA), puede ser instalado en dispositivos compatibles para una experiencia similar a una app nativa.
+
+  - Este proyecto tiene como Backend una arquitectura de microservicios y en la parte del Frontend un PWA.Al ser también una Aplicación Web Progresiva (PWA), puede ser instalado en dispositivos compatibles para una experiencia similar a una app nativa.
+
   - **Google Cloud:** [https://storage.googleapis.com/cine-pwa/index.html](https://storage.googleapis.com/cine-pwa/index.html)
   - **Amazon Web Services (AWS):** [https://cine-pwa.s3.us-east-2.amazonaws.com/index.html](https://cine-pwa.s3.us-east-2.amazonaws.com/index.html)
   - **Microsoft Azure:** [https://witty-rock-0406c590f.1.azurestaticapps.net/](https://witty-rock-0406c590f.1.azurestaticapps.net/)
