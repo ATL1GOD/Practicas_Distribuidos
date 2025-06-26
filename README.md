@@ -3,7 +3,7 @@
 Este repositorio contiene las soluciones para las prácticas de la asignatura de Sistemas Distribuidos. A continuación, se detalla la estructura del proyecto y las instrucciones para compilar y ejecutar cada práctica.
 
 *Enlace al Repositorio de GitHub:*
-[https://github.com/Dxniel7/Practicas_Distribuidos](https://github.com/Dxniel7/Practicas_Distribuidos)
+[https://github.com/Dxniel7/Practicas_Distribuidos]()
 
 ---
 
