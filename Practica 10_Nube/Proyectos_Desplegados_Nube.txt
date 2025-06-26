@@ -1,0 +1,7 @@
+Servicio Web (Panadería):
+Azure: https://panaderia-app-bhafafb5hja4axew.canadacentral-01.azurewebsites.net/
+
+Microservicio PWA (Cine - Proyecto en equipo):
+Google Cloud: https://storage.googleapis.com/cine-pwa/index.html
+Amazon Web Services (AWS): https://cine-pwa.s3.us-east-2.amazonaws.com/index.html
+Microsoft Azure: https://witty-rock-0406c590f.1.azurestaticapps.net/
